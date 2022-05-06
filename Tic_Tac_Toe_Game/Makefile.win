@@ -1,0 +1,28 @@
+# Project: Tic Tac Toe 1.0
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "Tic\ Tac\ Toe\ Game\ 3\ by\ 3.o"
+LINKOBJ  = "Tic Tac Toe Game 3 by 3.o"
+LIBS     = -L"D:/Dev Cpp/Dev-Cpp/MinGW64/lib" -L"D:/Dev Cpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lwinmm
+INCS     = -I"D:/Dev Cpp/Dev-Cpp/MinGW64/include" -I"D:/Dev Cpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev Cpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev Cpp/Dev-Cpp/MinGW64/include" -I"D:/Dev Cpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev Cpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev Cpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Tic Tac Toe Game.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Tic\ Tac\ Toe\ Game\ 3\ by\ 3.o": Tic\ Tac\ Toe\ Game\ 3\ by\ 3.c
+	$(CC) -c "Tic Tac Toe Game 3 by 3.c" -o "Tic Tac Toe Game 3 by 3.o" $(CFLAGS)
